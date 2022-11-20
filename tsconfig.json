@@ -14,8 +14,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "jsx": "react-jsx",
     "baseUrl": "./src",
-    "jsx": "react-jsx"
+    "paths": {
+      "*": ["./*"],
+      "@*": ["./*"]
+    }
   },
-  "include": ["src"]
+  "include": ["src", "jest.setup.ts"]
 }

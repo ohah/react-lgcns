@@ -17,7 +17,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen />
+        {process.env.NODE_ENV === 'development' && <ReactQueryDevtools initialIsOpen />}
         <RouterProvider router={router} />
       </QueryClientProvider>
     </Provider>

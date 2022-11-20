@@ -1,9 +1,24 @@
+import path from 'path';
+import { pathsToModuleNameMapper } from 'ts-jest';
+import { compilerOptions } from './tsconfig.json';
+// const { compilerOptions } = require('./tsconfig.json');
+
 module.exports = {
-  plugin: [],
-  preset: 'ts-jest',
-  globals: {
-    'ts-jest': {
-      babelConfig: true,
+  webpack: {
+    alias: {
+      '': path.resolve(__dirname, 'src'),
+    },
+  },
+  jest: {
+    configure: {
+      transform: {
+        '^.+\\.(ts|tsx)$': 'ts-jest',
+      },
+      preset: 'ts-jest',
+      roots: ['<rootDir>/src'],
+      testMatch: ['**/__tests__/**/*.+(ts|tsx|js)', '**/?(*.)+(spec|test).+(ts|tsx|js)'],
+      setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+      testEnvironment: 'jsdom',
     },
   },
   devServer: {
