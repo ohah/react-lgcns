@@ -2,7 +2,6 @@ import { render, screen } from '@testing-library/react';
 import App from 'App';
 import { createMemoryHistory } from 'history';
 import { BrowserRouter, RouterProvider } from 'react-router-dom';
-
 import '@testing-library/jest-dom';
 import router from 'router';
 
