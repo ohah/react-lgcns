@@ -4,11 +4,7 @@ import { compilerOptions } from './tsconfig.json';
 // const { compilerOptions } = require('./tsconfig.json');
 
 module.exports = {
-  webpack: {
-    alias: {
-      '': path.resolve(__dirname, 'src'),
-    },
-  },
+  webpack: {},
   jest: {
     configure: {
       transform: {
