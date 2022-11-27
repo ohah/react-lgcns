@@ -1,5 +1,5 @@
 import App from 'App';
-import { About, Home, Profile } from 'pages';
+import { About, Boot, Home, Profile } from 'pages';
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 
 const router = createBrowserRouter(
@@ -8,6 +8,7 @@ const router = createBrowserRouter(
       <Route index path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/Boot" element={<Boot />} />
     </Route>,
   ),
 );

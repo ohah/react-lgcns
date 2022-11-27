@@ -1,12 +1,13 @@
+import { useState } from 'react';
+
 import styled from '@emotion/styled';
 
-import { useState } from 'react';
 
 interface ToggleProps {
   active: boolean;
 }
 
-const Switch = styled.div<ToggleProps>`
+export const Switch = styled.div<ToggleProps>`
   background-color: brown;
   height: 30px;
   width: 50px;
@@ -28,7 +29,7 @@ const Toggle = (props: ToggleProps) => {
   const [checked, setChecked] = useState(props.active);
   return (
     <div>
-      <Switch active={checked} onClick={() => setChecked(!checked)}>
+      <Switch className="switch" active={checked} onClick={() => setChecked(!checked)}>
         <span />
       </Switch>
     </div>

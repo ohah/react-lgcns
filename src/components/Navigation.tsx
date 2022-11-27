@@ -16,6 +16,11 @@ const Navigation = () => {
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
+            <Nav.Link as={NavLink} to="/Boot">
+              BootStrap
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
             <Nav.Link as={NavLink} to="/about">
               About
             </Nav.Link>

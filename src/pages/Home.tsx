@@ -1,8 +1,12 @@
+import { useState } from 'react';
+
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
+import { Modal, Tooltip } from 'components';
 import logo from 'images/logo.svg';
 import react from 'images/react.svg';
 import { Alert, Col, Image, Row } from 'react-bootstrap';
+
 
 const Spin = keyframes`
   0% { 
@@ -21,6 +25,7 @@ const LgCnsLogo = styled(Image)`
 `;
 
 const Home = () => {
+  const [isShow, setShow] = useState<boolean>(false);
   return (
     <>
       <Row style={{ overflow: 'hidden' }}>
@@ -30,9 +35,13 @@ const Home = () => {
         </Col>
       </Row>
       <Row>
-        <Col>
+        <Col onClick={() => setShow(!isShow)}>
           <Alert variant="info">Hello, React!</Alert>
+          <Modal isShow={isShow} close={() => setShow(false)}>
+            무야호
+          </Modal>
         </Col>
+        <Tooltip title="a"> sadf </Tooltip>
       </Row>
     </>
   );

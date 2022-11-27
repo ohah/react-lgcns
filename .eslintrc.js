@@ -49,10 +49,10 @@ module.exports = {
     'import/order': [
       'warn',
       {
-        groups: ['index', 'parent', 'sibling', 'internal', 'external', 'builtin', 'object', 'type'],
+        groups: ['builtin', 'index', 'parent', 'sibling', 'internal', 'external', 'object', 'type'],
         pathGroups: [
-          { pattern: 'react', group: 'builtin', position: 'after' },
-          { pattern: 'react-dom', group: 'builtin', position: 'after' },
+          { pattern: 'react', group: 'builtin', position: 'before' },
+          { pattern: 'react-dom', group: 'builtin', position: 'before' },
         ],
         pathGroupsExcludedImportTypes: ['react', 'react-dom'],
         alphabetize: {

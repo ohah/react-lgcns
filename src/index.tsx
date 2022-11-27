@@ -1,3 +1,5 @@
+import React from 'react';
+
 import reportWebVitals from './reportWebVitals';
 
 import ReactDOM from 'react-dom/client';
@@ -8,7 +10,6 @@ import { RouterProvider } from 'react-router-dom';
 import router from 'router';
 import store from 'store';
 
-import React from 'react';
 
 const queryClient = new QueryClient();
 
