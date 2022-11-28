@@ -1,5 +1,5 @@
 import { css, Global } from '@emotion/react';
-import 'App.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navigation } from 'components';
 import { Container } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
