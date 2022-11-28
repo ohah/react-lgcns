@@ -2,3 +2,8 @@ export { default as Home } from 'pages/Home';
 export { default as Profile } from 'pages/Profile';
 export { default as About } from 'pages/About';
 export { default as Boot } from 'pages/Boot';
+export { default as Tooltip } from 'pages/Tooltip';
+export { default as Dropdown } from 'pages/Dropdown';
+export { default as Tab } from 'pages/Tab';
+export { default as Modal } from 'pages/Modal';
+export { default as Toast } from 'pages/Toast';

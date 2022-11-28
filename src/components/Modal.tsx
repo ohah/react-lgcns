@@ -6,8 +6,6 @@ import React, { useRef } from 'react';
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 
-
-
 const showAnimation = keyframes`
   0% {
     opacity: 0;
@@ -49,8 +47,8 @@ const ModalBody = styled.div`
   min-height: 32rem;
 `;
 interface ModalProps {
-  isShow: boolean;
-  close: () => void;
+  isShow?: boolean;
+  onClose: () => void;
   children: React.ReactNode;
 }
 
@@ -65,7 +63,7 @@ const Modal = (props: ModalProps) => {
   const onWrapper = (e: React.MouseEvent) => {
     e.preventDefault();
     if (e.currentTarget === wrapper.current) {
-      props.close();
+      props.onClose();
     }
   };
   const onBody = (e: React.MouseEvent) => {
