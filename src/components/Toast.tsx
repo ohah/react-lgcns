@@ -90,7 +90,7 @@ const ToastStyle = styled.div<ToastProps>`
   }
 `;
 const Toast = (props: ToastProps) => {
-  const { toast, queue, setQueue } = useContext(ToastContext);
+  const { setQueue } = useContext(ToastContext);
   setTimeout(() => {
     setQueue(queue => {
       const autoClose = queue.filter(q => q.id !== props.id);
@@ -108,7 +108,7 @@ const Toast = (props: ToastProps) => {
   );
 };
 export const ToastContainer = () => {
-  const { toast, queue, setQueue } = useContext(ToastContext);
+  const { queue } = useContext(ToastContext);
   return (
     <Wrapper>
       {queue.map(props => {

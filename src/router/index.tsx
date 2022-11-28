@@ -1,6 +1,4 @@
 import App from 'App';
-import { Toast } from 'components';
-import { useToastInit } from 'components/Toast';
 import { About, Boot, Dropdown, Home, Modal, Profile, Tab, Tooltip, Toast as ToastLayout } from 'pages';
 import { createBrowserRouter, createRoutesFromElements, Outlet, Route } from 'react-router-dom';
 

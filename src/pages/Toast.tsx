@@ -1,4 +1,3 @@
-import { Toast } from 'components';
 import { useToast } from 'components/Toast';
 import { Button } from 'react-bootstrap';
 

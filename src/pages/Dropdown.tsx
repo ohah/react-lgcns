@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Dropdown, Tooltip } from 'components';
+import { Dropdown } from 'components';
 import { DropdownListProps } from 'components/Dropdown';
 import { Alert } from 'react-bootstrap';
 
