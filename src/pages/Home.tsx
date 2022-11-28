@@ -19,9 +19,11 @@ const Spin = keyframes`
 const ReactLogo = styled(Image)`
   animation: ${Spin} infinite 20s linear;
   height: 40vmin;
+  width: 50%;
 `;
 const LgCnsLogo = styled(Image)`
   width: 40vmin;
+  width: 50%;
 `;
 
 const Home = () => {
