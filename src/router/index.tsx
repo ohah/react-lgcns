@@ -1,5 +1,7 @@
 import App from 'App';
-import { About, Boot, Dropdown, Home, Modal, Profile, Tab, Tooltip, Toast as ToastLayout } from 'pages';
+import { Boot, Home, Counter, Crud } from 'pages';
+import { Dropdown, Modal, Tab, Tooltip, Toast as ToastLayout, Toggle } from 'pages/components';
+import { Google, Kakao } from 'pages/login';
 import { createBrowserRouter, createRoutesFromElements, Outlet, Route } from 'react-router-dom';
 
 const router = createBrowserRouter(
@@ -10,11 +12,18 @@ const router = createBrowserRouter(
         <Route path="/components/tooltip" element={<Tooltip />} />
         <Route path="/components/dropdown" element={<Dropdown />} />
         <Route path="/components/tab" element={<Tab />} />
+        <Route path="/components/toggle" element={<Toggle />} />
         <Route path="/components/modal" element={<Modal />} />
         <Route path="/components/toast" element={<ToastLayout />} />
       </Route>
-      <Route path="/about" element={<About />} />
-      <Route path="/profile" element={<Profile />} />
+      <Route path="/redux" element={<Outlet />}>
+        <Route path="/redux/counter" element={<Counter />} />
+        <Route path="/redux/crud" element={<Crud />} />
+      </Route>
+      <Route path="/login" element={<Outlet />}>
+        <Route path="/login/kakao" element={<Kakao />} />
+        <Route path="/login/google" element={<Google />} />
+      </Route>
       <Route path="/Boot" element={<Boot />} />
     </Route>,
   ),

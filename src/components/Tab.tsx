@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable consistent-return */
 /* eslint-disable react/no-array-index-key */
-import React, { Children, forwardRef, Ref, useEffect, useMemo, useRef, useState } from 'react';
+import React, { Children, useEffect, useMemo, useRef, useState } from 'react';
 
 import styled from '@emotion/styled/macro';
 
@@ -30,7 +31,6 @@ const TabButton = styled.div`
   padding: 10px;
   justify-content: center;
   &.active {
-    /* border-bottom: 2px solid #1976d2; */
     color: #1976d2;
   }
 `;

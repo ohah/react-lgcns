@@ -29,17 +29,14 @@ const Message = styled.div`
 const Wrapper = styled.div`
   position: relative;
   display: inline-block;
-  &:hover ${Message} {
-    /* display: block; */
-  }
 `;
 
 const Tooltip = (props: TooltipProps) => {
   const [hover, setHover] = useState(false);
   return (
     <Wrapper onMouseOver={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-      <p>{props.title}</p>
-      {hover && <Message className="message">{props.children}</Message>}
+      <span>{props.children}</span>
+      {hover && <Message className="message">{props.title}</Message>}
     </Wrapper>
   );
 };

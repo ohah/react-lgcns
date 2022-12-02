@@ -32,19 +32,25 @@ const Navigation = () => {
               Toast
             </NavDropdown.Item>
           </NavDropdown>
+          <NavDropdown title="Redux" id="Redux-dropdown">
+            <NavDropdown.Item as={NavLink} to="/redux/counter">
+              Counter
+            </NavDropdown.Item>
+            <NavDropdown.Item as={NavLink} to="/redux/crud">
+              CRUD
+            </NavDropdown.Item>
+          </NavDropdown>
+          <NavDropdown title="Login" id="Social-Login">
+            <NavDropdown.Item as={NavLink} to="/login/kakao">
+              Kakao
+            </NavDropdown.Item>
+            <NavDropdown.Item as={NavLink} to="/login/google">
+              Google
+            </NavDropdown.Item>
+          </NavDropdown>
           <Nav.Item>
             <Nav.Link as={NavLink} to="/Boot">
               BootStrap
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link as={NavLink} to="/about">
-              About
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link as={NavLink} to="/profile">
-              Profile
             </Nav.Link>
           </Nav.Item>
         </Nav>

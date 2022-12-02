@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import styled from '@emotion/styled';
 
-
 interface ToggleProps {
   active: boolean;
 }
@@ -10,7 +9,7 @@ interface ToggleProps {
 export const Switch = styled.div<ToggleProps>`
   background-color: brown;
   height: 30px;
-  width: 50px;
+  width: 60px;
   border-radius: 15px;
   display: flex;
   align-items: center;
