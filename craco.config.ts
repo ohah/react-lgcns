@@ -1,8 +1,3 @@
-import path from 'path';
-import { pathsToModuleNameMapper } from 'ts-jest';
-import { compilerOptions } from './tsconfig.json';
-// const { compilerOptions } = require('./tsconfig.json');
-
 module.exports = {
   webpack: {},
   jest: {
@@ -15,14 +10,6 @@ module.exports = {
       testMatch: ['**/__tests__/**/*.+(ts|tsx|js)', '**/?(*.)+(spec|test).+(ts|tsx|js)'],
       setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
       testEnvironment: 'jsdom',
-    },
-  },
-  devServer: {
-    hot: true,
-    proxy: {
-      '/api/*': 'http://193.123.246.157/',
-      secure: false,
-      changeOrigin: true,
     },
   },
 };
