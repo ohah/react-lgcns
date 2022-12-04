@@ -18,10 +18,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "cross-env CLINET_ENV=local craco start",
+    "start": "cross-env NODE_ENV=development CLINET_ENV=dev craco start",
     "build": "craco build",
-    "build-prod": "cross-env CLINET_ENV=beta craco build",
-    "build-beta": "cross-env CLINET_ENV=prod craco build",
+    "build-beta": "cross-env NODE_ENV=development CLINET_ENV=beta craco build",
+    "build-prod": "cross-env NODE_ENV=production CLINET_ENV=prod craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.{ts,tsx,js,jsx}",
