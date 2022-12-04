@@ -1,7 +1,7 @@
 import App from 'App';
 import { Boot, Home, Counter, Crud } from 'pages';
 import { Dropdown, Modal, Tab, Tooltip, Toast as ToastLayout, Toggle } from 'pages/components';
-import { Google, Kakao } from 'pages/login';
+import { CustomGoogle, CustomKakao, Google, Kakao } from 'pages/login';
 import { createBrowserRouter, createRoutesFromElements, Outlet, Route } from 'react-router-dom';
 
 const router = createBrowserRouter(
@@ -22,7 +22,9 @@ const router = createBrowserRouter(
       </Route>
       <Route path="/login" element={<Outlet />}>
         <Route path="/login/kakao" element={<Kakao />} />
+        <Route path="/login/kakao2" element={<CustomKakao />} />
         <Route path="/login/google" element={<Google />} />
+        <Route path="/login/google2" element={<CustomGoogle />} />
       </Route>
       <Route path="/Boot" element={<Boot />} />
     </Route>,

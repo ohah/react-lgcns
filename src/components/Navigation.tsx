@@ -44,8 +44,14 @@ const Navigation = () => {
             <NavDropdown.Item as={NavLink} to="/login/kakao">
               Kakao
             </NavDropdown.Item>
+            <NavDropdown.Item as={NavLink} to="/login/kakao2">
+              CustomKakao
+            </NavDropdown.Item>
             <NavDropdown.Item as={NavLink} to="/login/google">
               Google
+            </NavDropdown.Item>
+            <NavDropdown.Item as={NavLink} to="/login/google2">
+              CustomGoogle
             </NavDropdown.Item>
           </NavDropdown>
           <Nav.Item>

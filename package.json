@@ -22,10 +22,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "cross-env CLINET_ENV=local craco start",
+    "start": "cross-env NODE_ENV=local craco start",
     "build": "craco build",
-    "build-prod": "cross-env CLINET_ENV=beta craco build",
-    "build-beta": "cross-env CLINET_ENV=prod craco build",
+    "build-prod": "cross-env NODE_ENV=production craco build",
+    "build-beta": "cross-env NODE_ENV=develoment craco build",
     "test:path": "craco test --detectOpenHandles --forceExit --runTestsByPath",
     "test": "craco test",
     "tsc": "tsc --strict --extendedDiagnostics",
@@ -61,6 +61,9 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/gapi": "^0.0.43",
+    "@types/gapi.auth2": "^0.0.56",
+    "@types/google.accounts": "^0.0.4",
     "@types/history": "^5.0.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.3",
