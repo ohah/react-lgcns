@@ -18,7 +18,7 @@ root.render(
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
         {process.env.NODE_ENV === 'development' && <ReactQueryDevtools initialIsOpen />}
-        <RouterProvider router={router} />
+        <RouterProvider router={router} fallbackElement={<div>라우터 렌더링 실패!</div>} />
       </QueryClientProvider>
     </Provider>
   </React.StrictMode>,
