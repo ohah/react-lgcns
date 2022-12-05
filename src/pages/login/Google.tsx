@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import jwtDecode from 'jwt-decode';
 

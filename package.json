@@ -22,11 +22,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=local craco start",
+    "start": "cross-env NODE_ENV=development craco start",
     "build": "craco build",
     "build-prod": "cross-env NODE_ENV=production craco build",
-    "build-beta": "cross-env NODE_ENV=develoment craco build",
-    "test:path": "craco test --detectOpenHandles --forceExit --runTestsByPath",
+    "build-beta": "cross-env NODE_ENV=development craco build",
     "test": "craco test",
     "tsc": "tsc --strict --extendedDiagnostics",
     "eject": "react-scripts eject",

@@ -17,8 +17,8 @@ function App() {
         <Global styles={GloblStyles} />
         <Navigation />
         <Outlet />
+        <Toast.Container />
       </Container>
-      <Toast.Container />
     </Toast.Context.Provider>
   );
 }

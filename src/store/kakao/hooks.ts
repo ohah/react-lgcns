@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useState } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { useEffect } from 'react';
 
-import jwtDecode from 'jwt-decode';
 import { useAppDispatch, useAppSelector } from 'store/hooks';
 import { update } from 'store/kakao/slice';
 

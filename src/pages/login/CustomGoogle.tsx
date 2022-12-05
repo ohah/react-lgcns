@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useRef } from 'react';
 
 import { useGoogle } from 'store/google/hooks';
 
 const CustomGoogle = () => {
-  const { gAuth, isLogin, render, user } = useGoogle();
+  const { gAuth, render } = useGoogle();
   const loginBtn = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (loginBtn.current) {

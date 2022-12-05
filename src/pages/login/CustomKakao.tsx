@@ -1,10 +1,10 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
-import { Button, Col, Row } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { useKakao } from 'store/kakao/hooks';
 
 const CustomKakao = () => {
-  const { kAuth, isLogin, render, user } = useKakao();
+  const { kAuth, render } = useKakao();
   useEffect(() => {
     // if (loginBtn.current) {
     //   render(loginBtn.current);

@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable consistent-return */
 /* eslint-disable react/no-array-index-key */
-import React, { Children, useEffect, useMemo, useRef, useState } from 'react';
+import React, { Children, useEffect, useMemo, useRef, useState, memo } from 'react';
 
 import styled from '@emotion/styled/macro';
 
@@ -113,12 +114,12 @@ const Wrapper = (props: TabProps) => {
     </TabWrapper>
   );
 };
-const Panel = React.memo((props: TabChildProps) => {
-  return <div>{props.children}</div>;
+const Panel = memo((props: TabChildProps) => {
+  return <div className="panel">{props.children}</div>;
 });
 Panel.displayName = 'Panel';
-const Context = React.memo((props: TabChildProps) => {
-  return <div>{props.children}</div>;
+const Context = memo((props: TabChildProps) => {
+  return <div className="context">{props.children}</div>;
 });
 Context.displayName = 'Context';
 

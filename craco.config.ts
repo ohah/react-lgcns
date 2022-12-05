@@ -14,12 +14,4 @@ module.exports = {
       testEnvironment: 'jsdom',
     },
   },
-  devServer: {
-    hot: true,
-    proxy: {
-      '/api/*': 'http://193.123.246.157/',
-      secure: false,
-      changeOrigin: true,
-    },
-  },
 };

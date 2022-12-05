@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/state-in-constructor */
 import React from 'react';
 interface Props {

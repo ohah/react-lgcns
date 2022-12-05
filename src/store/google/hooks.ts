@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { useEffect } from 'react';
 
 import jwtDecode from 'jwt-decode';

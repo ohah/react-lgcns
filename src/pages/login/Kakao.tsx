@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import KakaoLogin from 'react-kakao-login';
 
 const Kakao = () => {

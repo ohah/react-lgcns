@@ -3,9 +3,9 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { Dropdown } from 'components';
 import { DropdownListProps } from 'components/Dropdown';
-import renderer, { act } from 'react-test-renderer';
+import { act } from 'react-dom/test-utils';
 describe('Dropdown.tsx', () => {
-  test('Dropdown TypeCheck', async () => {
+  test('Dropdown onChange, List Show Test', async () => {
     const data = [
       { title: '툴팁', value: '툴팁' },
       { title: '패널', value: '패널' },
@@ -16,18 +16,15 @@ describe('Dropdown.tsx', () => {
     ];
 
     const onChange = (props: DropdownListProps) => {
-      console.log('test');
+      expect(props.title).toBe('패널');
     };
 
-    const { container, getAllByText } = render(
-      <div>
-        <div className="py-3">
-          <Dropdown value={data} label="Label" onChange={onChange} />
-        </div>
-      </div>,
-    );
-    await fireEvent.mouseDown(container);
-    const message = await container.querySelector('.message');
-    await expect(message).toBeVisible();
+    const { container, getAllByText } = render(<Dropdown value={data} label="Label" onChange={onChange} />);
+    await fireEvent.click(container.querySelector('.select')!);
+    await waitFor(async () => {
+      await expect(container.querySelector('.list')).toBeInTheDocument();
+    });
+    await fireEvent.click(container.querySelectorAll('.list li')![1]);
+    // await expect(screen.findAllByText(/패널/i)).toBeInTheDocument();
   });
 });
