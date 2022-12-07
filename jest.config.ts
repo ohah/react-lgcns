@@ -1,9 +1,9 @@
 import { compilerOptions } from './tsconfig.json';
 
 import type { Config } from 'jest';
-
 export default async (): Promise<Config> => {
   return {
+    verbose: false,
     extensionsToTreatAsEsm: ['.ts', '.tsx'],
     transform: {
       '^.+\\.(ts|tsx)$': [
@@ -23,6 +23,8 @@ export default async (): Promise<Config> => {
     modulePaths: [compilerOptions.baseUrl],
     moduleNameMapper: {
       '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+      '@emotion/styled': '<rootDir>/node_modules/@emotion/styled',
     },
+    snapshotSerializers: ['@emotion/jest/serializer'],
   };
 };
