@@ -171,7 +171,7 @@ const Dropdown = ({ value, onChange, defaultValue, label }: DropdownProps) => {
   }, [isAnimation]);
   return (
     <Wrapper onClick={e => e.stopPropagation()}>
-      <Select className="select" isShow={isAnimation} onClick={() => setAnimation(!isAnimation)}>
+      <Select isShow={isAnimation} onClick={() => setAnimation(!isAnimation)}>
         <Label isShow={isAnimation || displayValue !== ''}> {label} </Label>
         <span>{displayValue}</span>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -180,7 +180,7 @@ const Dropdown = ({ value, onChange, defaultValue, label }: DropdownProps) => {
         </svg>
       </Select>
       {isOpen && (
-        <ListWrapper className="list" isShow={isAnimation}>
+        <ListWrapper isShow={isAnimation}>
           {value.map(list => {
             return (
               <List key={list.value} onClick={() => selectedValue(list)}>
