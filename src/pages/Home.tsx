@@ -1,5 +1,7 @@
+import React from 'react';
+
 import { keyframes } from '@emotion/react';
-import styled from '@emotion/styled';
+import styled from '@emotion/styled/macro';
 import logo from 'images/logo.svg';
 import react from 'images/react.svg';
 import { Alert, Col, Image, Row } from 'react-bootstrap';

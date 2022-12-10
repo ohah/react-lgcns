@@ -82,7 +82,7 @@ const Wrapper = (props: TabProps) => {
     return Context?.filter(
       context => ((context as any).props as React.PropsWithChildren<TabChildProps>).index === index,
     );
-  }, [index]);
+  }, []);
   useEffect(() => {
     const activeButton = header.current?.querySelector('.active');
     if (activeButton) {
@@ -93,7 +93,7 @@ const Wrapper = (props: TabProps) => {
         return { width: width, left: left - leftMargin };
       });
     }
-  }, [index]);
+  }, []);
   return (
     <TabWrapper>
       <TabHeader ref={header}>

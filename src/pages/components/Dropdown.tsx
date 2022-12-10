@@ -20,6 +20,8 @@ const DropdownLayout = () => {
   };
   return (
     <div>
+      <h2>Q. useEffect를 활용하여 드롭다운 외의 영역을 클릭시 Dropdown이 닫히게 하세요 </h2>
+      <h2>ListWrapper는 isOpen의 상태에 따라 보여지거나 사라져야 합니다. </h2>
       <div className="py-3">
         <Dropdown value={data} label="Label" onChange={onChange} />
       </div>

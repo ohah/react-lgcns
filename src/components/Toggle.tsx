@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import styled from '@emotion/styled';
 
 interface ToggleProps {
   active: boolean;
+  onChange?: (checked: boolean) => void;
 }
 
 export const Switch = styled.div<ToggleProps>`
@@ -26,6 +27,7 @@ export const Switch = styled.div<ToggleProps>`
 `;
 const Toggle = (props: ToggleProps) => {
   const [checked, setChecked] = useState(props.active);
+
   return (
     <div>
       <Switch className="switch" active={checked} onClick={() => setChecked(!checked)}>

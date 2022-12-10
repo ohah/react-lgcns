@@ -91,12 +91,7 @@ const ToastStyle = styled.div<ToastProps>`
 `;
 const Toast = (props: ToastProps) => {
   const { setQueue } = useContext(ToastContext);
-  setTimeout(() => {
-    setQueue(queue => {
-      const autoClose = queue.filter(q => q.id !== props.id);
-      return [...autoClose];
-    });
-  }, 3300);
+
   const [close, setClose] = useState<boolean>(false);
   setTimeout(() => {
     setClose(true);

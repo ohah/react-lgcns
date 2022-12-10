@@ -32,11 +32,10 @@ const Wrapper = styled.div`
 `;
 
 const Tooltip = (props: TooltipProps) => {
-  const [hover, setHover] = useState(false);
   return (
-    <Wrapper onMouseOver={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+    <Wrapper>
       <span>{props.children}</span>
-      {hover && <Message className="message">{props.title}</Message>}
+      <Message className="message">{props.title}</Message>
     </Wrapper>
   );
 };
