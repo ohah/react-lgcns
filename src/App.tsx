@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { css, Global } from '@emotion/react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navigation, Toast } from 'components';

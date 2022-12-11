@@ -10,7 +10,13 @@ import { RouterProvider } from 'react-router-dom';
 import router from 'router';
 import store from 'store';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      suspense: true,
+    },
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(

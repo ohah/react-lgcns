@@ -1,7 +1,8 @@
 import App from 'App';
-import { Boot, Home, Counter, Crud } from 'pages';
+import { Boot, Home, Counter, Crud, ReduxCrud } from 'pages';
 import { Dropdown, Modal, Tab, Tooltip, Toast as ToastLayout, Toggle } from 'pages/components';
 import { CustomGoogle, CustomKakao, Google, Kakao } from 'pages/login';
+import { Home as RouterHome } from 'pages/router';
 import { createBrowserRouter, createRoutesFromElements, Outlet, Route } from 'react-router-dom';
 
 const router = createBrowserRouter(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
       <Route path="/redux" element={<Outlet />}>
         <Route path="/redux/counter" element={<Counter />} />
         <Route path="/redux/crud" element={<Crud />} />
+        <Route path="/redux/reduxCrud" element={<ReduxCrud />} />
       </Route>
       <Route path="/login" element={<Outlet />}>
         <Route path="/login/kakao" element={<Kakao />} />
@@ -26,6 +28,15 @@ const router = createBrowserRouter(
         <Route path="/login/google" element={<Google />} />
         <Route path="/login/google2" element={<CustomGoogle />} />
       </Route>
+      <Route
+        path="/router"
+        element={
+          <>
+            <RouterHome />
+            <Outlet />
+          </>
+        }
+      />
       <Route path="/Boot" element={<Boot />} />
     </Route>,
   ),
