@@ -36,8 +36,11 @@ const Navigation = () => {
             <NavDropdown.Item as={NavLink} to="/redux/counter">
               Counter
             </NavDropdown.Item>
+            <NavDropdown.Item as={NavLink} to="/redux/reduxCrud">
+              CRUD(Redux)
+            </NavDropdown.Item>
             <NavDropdown.Item as={NavLink} to="/redux/crud">
-              CRUD
+              CRUD(ReactQuery)
             </NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Login" id="Social-Login">
@@ -57,6 +60,11 @@ const Navigation = () => {
           <Nav.Item>
             <Nav.Link as={NavLink} to="/Boot">
               BootStrap
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link as={NavLink} to="/router">
+              Router
             </Nav.Link>
           </Nav.Item>
         </Nav>

@@ -2,7 +2,7 @@ import path from 'path';
 
 module.exports = {
   babel: {
-    presets: ['@emotion/babel-preset-css-prop'],
+    presets: ['@babel/preset-env', ['@babel/preset-react', { runtime: 'automatic' }]],
   },
   webpack: {},
 };
