@@ -21,11 +21,11 @@ const ReduxCrud = () => {
                   <div className="mb-2">
                     <InputGroup>
                       <InputGroup.Text>제목</InputGroup.Text>
-                      <Form.Control value={row.title} />
+                      <Form.Control defaultValue={row.title} />
                     </InputGroup>
                     <InputGroup>
                       <InputGroup.Text>내용</InputGroup.Text>
-                      <Form.Control value={row.content} />
+                      <Form.Control defaultValue={row.content} />
                     </InputGroup>
                   </div>
                 </div>
@@ -60,7 +60,7 @@ const ReduxCrud = () => {
                 placeholder="제목"
                 aria-label="제목"
                 aria-describedby="input-title"
-                value={todo.title}
+                defaultValue={todo.title}
                 onChange={e => {
                   setTodo(todo => {
                     return {
@@ -77,7 +77,7 @@ const ReduxCrud = () => {
                 placeholder="내용"
                 aria-label="내용"
                 aria-describedby="input-content"
-                value={todo.content}
+                defaultValue={todo.content}
                 onChange={e => {
                   setTodo(todo => {
                     return {
