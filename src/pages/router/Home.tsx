@@ -2,18 +2,12 @@ import styled from '@emotion/styled/macro';
 import { Alert, Button, Col, Row, Stack } from 'react-bootstrap';
 import { Link, NavLink, useNavigate, useSearchParams } from 'react-router-dom';
 
-const RouterWrapper = styled.div`
-  .active {
-    color: red;
-  }
-`;
+const RouterWrapper = styled.div``;
 
 const Home = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const goToHome = () => {
-    navigate('/');
-  };
+  const goToHome = () => {};
   return (
     <RouterWrapper>
       <Stack gap={2}>
@@ -34,8 +28,8 @@ const Home = () => {
           </Button>
         </Row>
         <Alert>
-          <p className="page-query"> page : {searchParams.get('page')} </p>
-          <p className="limit-page"> limit : {searchParams.get('limit')} </p>
+          <p className="page-query"> page : </p>
+          <p className="limit-page"> limit : </p>
         </Alert>
       </Stack>
     </RouterWrapper>

@@ -33,28 +33,15 @@ export const useTodosCreateMutation = () => {
   );
 };
 
-export const useTodosRemoveMutation = () => {
-  const queryClient = useQueryClient();
-  return useMutation(({ id }: Pick<ITodos, 'id'>) => axios.delete<ITodos[]>(`${API_URL}/crud/${id}`), {
-    onSuccess: () => queryClient.invalidateQueries(TODO_KEY.READ_TODO),
-  });
-};
+export const useTodosUpdateMutation = () => {};
 
-export const useTodosUpdateMutation = () => {
-  const queryClient = useQueryClient();
-  return useMutation(
-    ({ id, title, content }: ITodos) => axios.put<ITodos[]>(`${API_URL}/crud/${id}`, { title, content }),
-    {
-      onSuccess: () => queryClient.invalidateQueries(TODO_KEY.READ_TODO),
-    },
-  );
-};
+export const useTodosRemoveMutation = () => {};
 
 export const useTodos = (options?: Options) => {
   return {
     status: useTodosQuery(options ? { ...options } : { lazy: false }),
     create: useTodosCreateMutation().mutate,
-    update: useTodosUpdateMutation().mutate,
-    remove: useTodosRemoveMutation().mutate,
+    update: () => {},
+    remove: () => {},
   };
 };

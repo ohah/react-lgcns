@@ -35,14 +35,20 @@ const Crud = () => {
                       variant="primary"
                       size="sm"
                       onClick={() => {
-                        update({ id: row.id, title: '수정', content: '수정입니다' });
+                        // update({ id: row.id, title: '수정', content: '수정입니다' });
                       }}
                     >
                       수정
                     </Button>
                   </Row>
                   <Row>
-                    <Button variant="danger" size="sm" onClick={() => remove({ id: row.id })}>
+                    <Button
+                      variant="danger"
+                      size="sm"
+                      onClick={() => {
+                        // remove({ id: row.id })
+                      }}
+                    >
                       삭제
                     </Button>
                   </Row>
