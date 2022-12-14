@@ -82,7 +82,7 @@ const Label = styled.div<SelectState>`
   transform: ${props =>
     props.isShow === true ? 'translate(8px, -10px) scale(0.75);' : 'translate(10px, 8.5px) scale(1);'};
 `;
-const ListWrapper = styled.ul<SelectState>`
+const ListWrapper = styled.ul`
   position: absolute;
   min-width: 5rem;
   border-radius: 5px;
@@ -94,9 +94,6 @@ const ListWrapper = styled.ul<SelectState>`
   box-shadow: 1px 0.5px 0.2px 0 #ccc;
   transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s;
   left: 0;
-  animation: ${props => (props.isShow === true ? ShowAnimation : HideAnimation)} 0.2s linear;
-  transform-origin: top center;
-  animation-fill-mode: forwards;
 
   & ${List}:hover {
     background-color: #eee;
@@ -136,60 +133,38 @@ const ListWrapper = styled.ul<SelectState>`
 const Dropdown = ({ value, onChange, defaultValue, label }: DropdownProps) => {
   const [isOpen, setOpen] = useState(false);
   const [displayValue, setValue] = useState(defaultValue || '');
-  const [isAnimation, setAnimation] = useState(false);
-  const [time, setTime] = useState<ReturnType<typeof setTimeout>>();
   const selectedValue = useCallback((props: DropdownListProps) => {
-    setAnimation(false);
+    setOpen(true);
     setValue(props.value);
     onChange(props);
   }, []);
 
-  const closeDropdown = (e: MouseEvent) => {
-    e.preventDefault();
-    setAnimation(false);
-  };
-
   useEffect(() => {
-    document.body.addEventListener('click', closeDropdown);
+    //
     return () => {
-      document.body.removeEventListener('click', closeDropdown);
+      //
     };
   }, []);
 
-  useEffect(() => {
-    if (isAnimation === true) {
-      clearTimeout(time);
-      setOpen(true);
-    } else if (isAnimation === false) {
-      setTime(
-        setTimeout(() => {
-          setOpen(false);
-        }, 200),
-      );
-    }
-    return () => {};
-  }, [isAnimation]);
   return (
     <Wrapper onClick={e => e.stopPropagation()}>
-      <Select isShow={isAnimation} onClick={() => setAnimation(!isAnimation)}>
-        <Label isShow={isAnimation || displayValue !== ''}> {label} </Label>
+      <Select isShow={isOpen} onClick={() => setOpen(!isOpen)}>
+        <Label isShow={isOpen || displayValue !== ''}> {label} </Label>
         <span>{displayValue}</span>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
           <path fill="none" d="M0 0h24v24H0z" />
           <path d="M12 16l-6-6h12z" />
         </svg>
       </Select>
-      {isOpen && (
-        <ListWrapper isShow={isAnimation}>
-          {value.map(list => {
-            return (
-              <List key={list.value} onClick={() => selectedValue(list)}>
-                {list.title}
-              </List>
-            );
-          })}
-        </ListWrapper>
-      )}
+      <ListWrapper>
+        {value.map(list => {
+          return (
+            <List key={list.value} onClick={() => selectedValue(list)}>
+              {list.title}
+            </List>
+          );
+        })}
+      </ListWrapper>
     </Wrapper>
   );
 };
